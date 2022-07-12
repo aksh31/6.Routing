@@ -1,0 +1,29 @@
+<div class="row mt-4">
+    <div class="col-sm-4">
+        <ul class="list-group">
+            <li class="list-group-item" 
+            [routerLink]="['/products', product.id]"
+            [queryParams]="{allowEdit : product.id}"
+            [ngClass]="{'active' : product.id === 1}" 
+            *ngFor="let product of productArray">
+                {{product.pName}}
+            </li>
+        </ul>
+        <button class="btn btn-info my-5" (click)="onHome()">
+            GotoHome
+        </button>
+        <!-- <button class="btn btn-info m-2" (click)="onLoadingProduct()">
+            GotoProducts via TS
+        </button> -->
+    </div>
+
+    <!-- <div class="col-sm-4">
+        <app-edit-product></app-edit-product>
+    </div>
+    <div class="col-sm-4">
+        <app-product></app-product>
+    </div> -->
+    <div class="col-sm-4">
+        <router-outlet></router-outlet>
+    </div>
+</div>
