@@ -14,8 +14,8 @@ export class ProductsComponent implements OnInit {
   constructor(private productService : ProductService,
               private router : Router,
               private activatedRoute : ActivatedRoute ) {
-
   }
+
 
   ngOnInit(): void {
     this.productArray = this.productService.getProductsArray();
