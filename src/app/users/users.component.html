@@ -3,7 +3,7 @@
         <ul class="list-group">
             <li class="list-group-item" 
             [routerLink]="['/users', user.id, user.name]"
-            [ngClass]="{'active' : user.id === 1}" 
+            routerLinkActive="active"
             *ngFor="let user of users">
                 {{user.name}}
             </li>

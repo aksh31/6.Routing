@@ -11,19 +11,11 @@ import { RouterModule, Routes } from '@angular/router';
 import { UserComponent } from './users/user/user.component';
 import { ProductComponent } from './products/product/product.component';
 import { EditProductComponent } from './products/edit-product/edit-product.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { AppRoutingModule } from './app-routing.module';
 
 
-const appRoutes:Routes = [
-  {path : '', component: HomeComponent},
-  {path : 'users', component : UsersComponent, children : [
-    {path : ':id/:name', component : UserComponent},
-  ]},
-  {path : 'products', component: ProductsComponent, children : [
-    {path : ':id', component: ProductComponent},
-    {path : ':id/edit', component: EditProductComponent},
-  ]},
-  
-]
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,12 +25,13 @@ const appRoutes:Routes = [
     ProductsComponent,
     UserComponent,
     ProductComponent,
-    EditProductComponent
+    EditProductComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(appRoutes),
-    FormsModule
+    FormsModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

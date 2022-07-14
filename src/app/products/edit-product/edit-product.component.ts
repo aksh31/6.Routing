@@ -14,10 +14,19 @@ export class EditProductComponent implements OnInit {
   pStatus!: string | undefined;
   pId!: number | undefined;
 
+  canNotEdit : boolean = false;
+
   constructor(private productService: ProductService,
     private route: ActivatedRoute) { }
 
   ngOnInit(): void {
+
+    this.route.queryParams
+                  .subscribe((queryParams : Params) => {
+                    console.log(queryParams);
+                    
+                    this.canNotEdit = queryParams['allowEdit'] === '0'? true : false;
+                  })
 
     this.route.params
       .subscribe((params: Params) => {

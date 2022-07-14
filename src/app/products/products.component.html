@@ -3,8 +3,8 @@
         <ul class="list-group">
             <li class="list-group-item" 
             [routerLink]="['/products', product.id]"
-            [queryParams]="{allowEdit : product.id}"
-            [ngClass]="{'active' : product.id === 1}" 
+            [queryParams]="{allowEdit : product.id === 1 ? '1' : '0'}"
+            routerLinkActive="active" 
             *ngFor="let product of productArray">
                 {{product.pName}}
             </li>
