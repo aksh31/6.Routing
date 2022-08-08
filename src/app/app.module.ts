@@ -13,6 +13,8 @@ import { ProductComponent } from './products/product/product.component';
 import { EditProductComponent } from './products/edit-product/edit-product.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { AppRoutingModule } from './app-routing.module';
+import { DropDownDirective } from './shared/directive/drop-down.directive';
+import { ErrorMsgComponent } from './error-msg/error-msg.component';
 
 
 
@@ -26,7 +28,9 @@ import { AppRoutingModule } from './app-routing.module';
     UserComponent,
     ProductComponent,
     EditProductComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    DropDownDirective,
+    ErrorMsgComponent
   ],
   imports: [
     BrowserModule,

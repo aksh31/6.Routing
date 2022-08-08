@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Params, Router } from '@angular/router';
+import { ActivatedRoute, Data, Params, Router } from '@angular/router';
 import { Iproduct } from 'src/app/shared/model/base';
 import { ProductService } from 'src/app/shared/services/product-service.service';
 
@@ -12,19 +12,25 @@ export class ProductComponent implements OnInit {
   singleProduct!: Iproduct | undefined;
   productID: number = 1;
   constructor(private productService: ProductService,
-    private route : ActivatedRoute,
-    private router : Router) { }
-
-  ngOnInit(): void {
-    this.route.params
-      .subscribe((params: Params) => {
-        this.productID = +params['id'];
-        this.singleProduct = this.productService.getSingleProduct(this.productID)
+    private route: ActivatedRoute,
+    private router: Router) {
+    this.route.data
+      .subscribe((data: Data) => {
+        this.singleProduct = data['product'];
       })
   }
 
-  onProductEdit(){
+  ngOnInit(): void {
+
+    // this.route.params
+    //   .subscribe((params: Params) => {
+    //     this.productID = +params['id'];
+    //     this.singleProduct = this.productService.getSingleProduct(this.productID)
+    //   })
+  }
+
+  onProductEdit() {
     // this.router.navigate(['products', this.productID, 'edit'])
-    this.router.navigate(['edit'], {relativeTo : this.route , queryParamsHandling : 'preserve'});
+    this.router.navigate(['edit'], { relativeTo: this.route, queryParamsHandling: 'preserve' });
   }
 }

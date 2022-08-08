@@ -1,22 +1,41 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">Navbar</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-  
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
-          <a class="nav-link" routerLink="/">Home <span class="sr-only">(current)</span></a>
-        </li>
+  <a class="navbar-brand" href="#">Navbar</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
 
-        <li class="nav-item" routerLinkActive="active">
-          <a class="nav-link" routerLink="/users">Users</a>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
+        <a class="nav-link" routerLink="/">Home <span class="sr-only">(current)</span></a>
+      </li>
+
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link" routerLink="/users">Users</a>
+      </li>
+
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link" routerLink="/products">Products</a>
+      </li>
+    </ul>
+
+    <!-- <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link btn btn-info text-white" (click)="onLogOut()" href="javascript:;">Log Out</a>
         </li>
-        
-        <li class="nav-item" routerLinkActive="active">
-          <a class="nav-link" routerLink="/products">Products</a>
-        </li>
-      </ul>
-    </div>
-  </nav>
+      </ul> -->
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item dropdown" appDropDown>
+        <a class="nav-link dropdown-toggle" href="javascript:;" id="navbarDropdown" role="button" data-toggle="dropdown"
+          aria-expanded="false">
+          Dropdown
+        </a>
+        <div class="dropdown-menu" appDropDown aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="javascript:;" (click)="onLogIn()">Log In</a>
+          <a class="dropdown-item" href="javascript:;" (click)="onLogOut()">Log Out</a>
+        </div>
+      </li>
+    </ul>
+  </div>
+</nav>

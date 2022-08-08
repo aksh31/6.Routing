@@ -30,8 +30,15 @@ export class ProductService {
   }
 
   getSingleProduct(id:number){
-    let prod = this.productArray.find(obj => obj.id === id);
-    return prod;
+    return this.productArray.find(obj => obj.id === id);
   }
 
+  updateProduct(id:number, pName:string, pStatus:string){
+    this.productArray.forEach(product => {
+      if(product.id === id){
+        product.pName = pName;
+        product.pStatus = pStatus;
+      }
+    })
+  }
 }

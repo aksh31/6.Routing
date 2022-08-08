@@ -11,3 +11,6 @@ export interface Iproduct{
     pName : string;
     pStatus : string;
 }
+
+
+export type uniPro = Iproduct | undefined;
